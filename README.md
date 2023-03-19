@@ -11,11 +11,15 @@ Replace `<Your server ip address>` with ip address(eg. 10.4.60.1) of your VPS se
 
 #### Install bind
 
-```sudo apt install bind9 bind9utils bind9-doc```
+```
+sudo apt install bind9 bind9utils bind9-doc
+```
 
 #### Modify `/etc/default/named`
 
-```OPTIONS="-u bind -4"```
+```
+OPTIONS="-u bind -4"
+```
 
 #### Configure `/etc/bind/named.conf.options`
 
@@ -139,11 +143,15 @@ __Note:__ To check if dns is working properly or not you may use `dig @ns1.<Your
 ### Setting up Certbot with Bind
 #### Install certbot
 
-```sudo apt install certbot python3-certbot-dns-rfc2136```
+```
+sudo apt install certbot python3-certbot-dns-rfc2136
+```
 
 #### Generate a key to secure the update process
 
-```sudo sh -c "tsig-keygen -a HMAC-SHA512 tsig-key > /etc/bind/tsig.key"```
+```
+sudo sh -c "tsig-keygen -a HMAC-SHA512 tsig-key > /etc/bind/tsig.key"
+```
 
 #### Create ```/etc/bind/named.conf.certbot```
 
